@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">WisdomPills</string>
+    <string name="btn_register">Registrarse</string>
+    <string name="btn_login">Entrar</string>
+    <string name="lbl_WisdomPills">Píldoras de sabiduría</string>
+    <string name="description_ivWisdom">Un hombre mayor y sabio cominedo píldoras.</string>
+    <string name="autocompleted_textview">Introduce tu píldora</string>
+    <string name="search">Buscar</string>
+    <string name="settings">Configuración</string>
+    <string name="btn_add">Añadir</string>
+    <string name="et_name">Nombre</string>
+    <string name="et_repeatpassword">Repite la contraseña</string>
+    <string name="et_password">Contraseña</string>
+    <string name="btn_reg">Registrar ahora</string>
+</resources>
