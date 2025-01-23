@@ -1,8 +1,29 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+
+    <!-- Colores básicos -->
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
     <color name="lavender">#E6E6FA</color>
     <color name="mint">#98FF98</color>
+
+    <!-- Colores para el modo claro -->
+    <color name="colorPrimaryLight">#4CAF50</color> <!-- Verde vibrante -->
+    <color name="colorPrimaryDarkLight">#388E3C</color> <!-- Verde oscuro -->
+    <color name="colorAccentLight">#FFC107</color> <!-- Amarillo cálido -->
+    <color name="textPrimaryLight">#212121</color> <!-- Texto principal oscuro para contraste -->
+    <color name="textSecondaryLight">#757575</color> <!-- Texto secundario -->
+    <color name="backgroundLight">#98FF98</color> <!-- Fondo mint -->
+
+    <!-- Colores alternativos para modo oscuro -->
+    <color name="colorPrimaryDark">#03A9F4</color> <!-- Azul vibrante -->
+    <color name="colorPrimaryDarkDark">#0288D1</color> <!-- Azul oscuro -->
+    <color name="colorAccentDark">#FFEB3B</color> <!-- Amarillo brillante -->
+    <color name="textPrimaryDark">#E1E1E1</color> <!-- Texto claro para contraste con fondo oscuro -->
+    <color name="textSecondaryDark">#B0B0B0</color> <!-- Texto secundario claro -->
+    <color name="backgroundDark">#212121</color> <!-- Fondo oscuro para modo nocturno -->
+
+    <!-- Colores de botones -->
+    <color name="buttonTextLight">#FFFFFF</color> <!-- Texto blanco para botones en modo claro -->
+    <color name="buttonTextDark">#000000</color> <!-- Texto negro para botones en modo oscuro -->
 
 </resources>

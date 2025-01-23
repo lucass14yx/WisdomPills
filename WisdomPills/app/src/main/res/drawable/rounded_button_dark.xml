@@ -4,6 +4,6 @@
     <corners android:radius="25dp" /> <!-- Radio de las esquinas -->
     <stroke
         android:width="10px"
-        android:color="@color/textPrimaryLight"/>
+        android:color="@color/textPrimaryDark"/>
 
 </shape>

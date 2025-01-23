@@ -6,13 +6,16 @@ import androidx.lifecycle.LiveData
 import com.maestre.wisdompills.Model.User
 import com.maestre.wisdompills.Model.persistence.UserRepository
 
+
+
 class UserViewModel(application: Application) : AndroidViewModel(application) {
     private val repository: UserRepository
-    lateinit var usersLiveData: LiveData<List<User>>
+    val usersLiveData: LiveData<List<User>>
+
 
     init {
         repository = UserRepository()
-        getUsers()
+        usersLiveData = repository.getUsers()
     }
 
     fun addUser(email: String, password: String, nickname: String) {
@@ -20,7 +23,5 @@ class UserViewModel(application: Application) : AndroidViewModel(application) {
         repository.addUser(user)
     }
 
-    private fun getUsers() {
-        usersLiveData= repository.getUsers()
-    }
+
 }

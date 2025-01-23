@@ -3,6 +3,7 @@ package com.maestre.wisdompills.View
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
@@ -23,6 +24,7 @@ class EnterActivity : AppCompatActivity() {
         binding = ActivityEnterBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val userId = intent.getStringExtra("idUser")
         val toolbar: MaterialToolbar = binding.materialToolbar
         setSupportActionBar(toolbar)
 
@@ -37,7 +39,11 @@ class EnterActivity : AppCompatActivity() {
         binding.btnAdd.setOnClickListener {
             val title = binding.titleEditText.text.toString()
             val content = binding.contentEditText.text.toString()
-            viewmodel.addNote(title, content)
+            if (userId != null) {
+                viewmodel.addNote(title, content, userId)
+            }else{
+                Toast.makeText(this,"Hay un null en idUsuario",Toast.LENGTH_SHORT).show()
+            }
         }
 
 

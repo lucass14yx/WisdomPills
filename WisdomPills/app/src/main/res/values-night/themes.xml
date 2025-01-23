@@ -1,7 +1,21 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.WisdomPills" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+    <style name="Base.Theme.WisdomPills" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <!-- Colores para el modo claro -->
+        <item name="colorPrimary">@color/colorPrimaryDark</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkDark</item>
+        <item name="colorAccent">@color/colorAccentDark</item>
+
+        <!-- Colores del texto -->
+        <item name="android:textColorPrimary">@color/textPrimaryDark</item>
+        <item name="android:textColorSecondary">@color/textSecondaryDark</item>
+    </style>
+    <style name="WisdomPillsTheme" parent="Base.Theme.WisdomPills">
+        <item name="android:background">@color/backgroundDark</item>
+        <item name="android:buttonStyle">@style/ButtonStyle</item>
+    </style>
+    <style name="ButtonStyle" parent="Widget.AppCompat.Button">
+        <item name="android:textColor">@color/textPrimaryDark</item>
+        <item name="android:background">@drawable/rounded_button_dark</item>
     </style>
 </resources>

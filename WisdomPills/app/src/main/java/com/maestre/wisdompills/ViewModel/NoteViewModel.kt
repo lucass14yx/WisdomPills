@@ -15,8 +15,8 @@ class NoteViewModel(application: Application) : AndroidViewModel(application) {
         getNotes()
     }
 
-    fun addNote(titulo: String, contenido: String) {
-        val note = Note(null, titulo, contenido)
+    fun addNote(titulo: String, contenido: String, idUsuario: String) {
+        val note = Note(null, titulo, contenido, idUsuario)
         repository.addNote(note)
     }
 

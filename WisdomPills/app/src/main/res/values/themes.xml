@@ -1,15 +1,21 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.WisdomPills" parent="Theme.AppCompat.Light.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <!-- Colores para el modo claro -->
+        <item name="colorPrimary">@color/colorPrimaryLight</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkLight</item>
+        <item name="colorAccent">@color/colorAccentLight</item>
+
+        <!-- Colores del texto -->
+        <item name="android:textColorPrimary">@color/textPrimaryLight</item>
+        <item name="android:textColorSecondary">@color/textSecondaryLight</item>
     </style>
     <style name="WisdomPillsTheme" parent="Base.Theme.WisdomPills">
-        <item name="android:background">@color/mint</item>
+        <item name="android:windowBackground">@color/backgroundLight</item>
         <item name="android:buttonStyle">@style/ButtonStyle</item>
     </style>
     <style name="ButtonStyle" parent="Widget.AppCompat.Button">
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">@color/textPrimaryLight</item>
         <item name="android:background">@drawable/rounded_button</item>
     </style>
 </resources>
