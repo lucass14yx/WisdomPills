@@ -21,7 +21,7 @@ class NoteViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     private fun getNotes() {
-        notesLiveData= repository.getNotes()
+        notesLiveData= repository.getNotes(userId)
     }
 
 }

@@ -22,12 +22,13 @@ class NoteRepository {
         databaseReference.child("notes").child(key!!).setValue(note)
     }
 
-    fun getNotes(): MutableLiveData<List<Note>> {
+
+    fun getNotes(userId: String): MutableLiveData<List<Note>> {
         val notes = MutableLiveData<List<Note>>()
 
         // Cada vez que los datos cambien, se llamará al evento onDataChange con la nueva lista de datos
-        val firebaseDataListener = FirebaseDataListenerNote(notes)
-        databaseReference.child("notes").addValueEventListener(firebaseDataListener)
+        val firebaseDataListener = FirebaseDataListenerNote(notes, userId)
+        databaseReference.child("notes").orderByChild("userId").equalTo(userId).addValueEventListener(firebaseDataListener)
 
         return notes
     }

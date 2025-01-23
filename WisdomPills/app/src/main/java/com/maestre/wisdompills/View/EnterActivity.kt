@@ -33,9 +33,10 @@ class EnterActivity : AppCompatActivity() {
         // Configuramos el RecyclerView
         initRecyclerView()
 
-        // Observe changes in notesLiveData
         viewmodel.notesLiveData.observe(this) { notes ->
-            myAdapter.updateData(notes)
+            val userId = intent.getStringExtra("idUser")
+            val userNotes = notes.filter { it.idUser == userId }
+            myAdapter.updateData(userNotes)
         }
 
         binding.btnAdd.setOnClickListener {
