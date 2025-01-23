@@ -17,21 +17,23 @@ import com.maestre.wisdompills.databinding.ActivityEnterBinding
 class EnterActivity : AppCompatActivity() {
     private lateinit var binding: ActivityEnterBinding
     private lateinit var myAdapter: NoteAdapter
-    val viewmodel: NoteViewModel by viewModels()
+    private val viewmodel: NoteViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityEnterBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val userId = intent.getStringExtra("idUser")
+        val userId = intent.getStringExtra("idUser")?:return
+        Toast.makeText(this, "idUsuario: $userId", Toast.LENGTH_SHORT).show()
         val toolbar: MaterialToolbar = binding.materialToolbar
         setSupportActionBar(toolbar)
 
-        // Configuramos el RecyclerView
-        initRecyclerView(viewmodel)
 
-        //si cambian los datos, actualizar rv
+        // Configuramos el RecyclerView
+        initRecyclerView()
+
+        // Observe changes in notesLiveData
         viewmodel.notesLiveData.observe(this) { notes ->
             myAdapter.updateData(notes)
         }
@@ -39,16 +41,17 @@ class EnterActivity : AppCompatActivity() {
         binding.btnAdd.setOnClickListener {
             val title = binding.titleEditText.text.toString()
             val content = binding.contentEditText.text.toString()
-            if (userId != null) {
-                viewmodel.addNote(title, content, userId)
-            }else{
-                Toast.makeText(this,"Hay un null en idUsuario",Toast.LENGTH_SHORT).show()
-            }
+
+            binding.titleEditText.text.clear()
+            binding.contentEditText.text.clear()
+            viewmodel.addNote(title, content, userId)
+
+
         }
 
 
     }
-    private fun initRecyclerView(viewmodel: NoteViewModel) {
+    private fun initRecyclerView() {
         val manager = LinearLayoutManager(this)
         binding.notesRecyclerView.layoutManager = manager
         myAdapter = NoteAdapter(mutableListOf())

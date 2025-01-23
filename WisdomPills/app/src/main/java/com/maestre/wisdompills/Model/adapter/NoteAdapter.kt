@@ -3,35 +3,29 @@ package com.maestre.wisdompills.Model.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.maestre.wisdompills.R
 import com.maestre.wisdompills.Model.Note
+import com.maestre.wisdompills.databinding.ItemNoteBinding
 
-class NoteAdapter (private val notas: List<Note>): RecyclerView.Adapter<NoteViewHolder>() {
-    private var data: List<Note>
-    init {
-        data = notas
-    }
+class NoteAdapter(private var notes: MutableList<Note>) : RecyclerView.Adapter<NoteViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NoteViewHolder {
-        // Inflamos el layout de cada elemento
-        val layoutInflater = LayoutInflater.from(parent.context)
-        return NoteViewHolder(layoutInflater.inflate(R.layout.item_note, parent, false))
+        val binding = ItemNoteBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return NoteViewHolder(binding.root)
     }
 
     override fun onBindViewHolder(holder: NoteViewHolder, position: Int) {
-        // Inicializamos la lista
-        val nota = data[position]
-        holder.titulo.text = nota.titulo
-        holder.contenido.text = nota.contenido
+        val note = notes[position]
+        holder.titulo.text = note.titulo
+        holder.contenido.text = note.contenido
     }
 
     override fun getItemCount(): Int {
-        return data.size
+        return notes.size
     }
 
-    fun updateData(newData: List<Note>) {
-        this.data = newData
-        notifyItemChanged(0, data.size-1)
+    fun updateData(newNotes:List<Note>) {
+        notes.clear()
+        notes.addAll(newNotes)
         notifyDataSetChanged()
     }
 }
