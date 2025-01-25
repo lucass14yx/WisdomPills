@@ -16,5 +16,5 @@
     <string name="toolbar">Menú</string>
     <string name="hint_title_pill">Titulo</string>
     <string name="hint_pill">Introduce tu píldora aquí</string>
-    <string name="welcome">"Bienvenidx "</string>
+    <string name="welcome">¡Bienvenidx %1$s!</string>
 </resources>

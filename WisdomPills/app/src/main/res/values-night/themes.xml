@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.WisdomPillsDark" parent="Theme.AppCompat.DayNight.NoActionBar">
+    <style name="Base.Theme.WisdomPills" parent="Theme.AppCompat.DayNight.NoActionBar">
         <!-- Colores para el modo oscuro -->
         <item name="colorPrimary">@color/colorPrimaryDark</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDarkDark</item>
@@ -10,7 +10,7 @@
         <item name="android:textColorPrimary">@color/textPrimaryDark</item>
         <item name="android:textColorSecondary">@color/textSecondaryDark</item>
     </style>
-    <style name="WisdomPillsThemeDark" parent="Base.Theme.WisdomPillsDark">
+    <style name="WisdomPillsTheme" parent="Base.Theme.WisdomPills">
         <item name="android:background">@color/backgroundDark</item>
         <item name="android:buttonStyle">@style/ButtonStyle</item>
     </style>

@@ -28,7 +28,9 @@ class EnterActivity : AppCompatActivity() {
 
         val userId = intent.getStringExtra("idUser")?:return
         val name = intent.getStringExtra("name")?:return
-        binding.textView.setText(@strings/welcome + name)
+        val mensaje = getString(R.string.welcome, name)
+        binding.textView.setText(mensaje)
+
         Toast.makeText(this, "idUsuario: $userId", Toast.LENGTH_SHORT).show()
         val toolbar: MaterialToolbar = binding.materialToolbar
         setSupportActionBar(toolbar)

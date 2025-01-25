@@ -16,5 +16,5 @@
     <string name="toolbar">Menu</string>
     <string name="hint_title_pill">Title</string>
     <string name="hint_pill">Enter here your pill</string>
-    <string name="welcome">Welcome </string>
+    <string name="welcome">Welcome %1$s!</string>
 </resources>
