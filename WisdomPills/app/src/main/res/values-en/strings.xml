@@ -13,4 +13,8 @@
     <string name="et_name">Name</string>
     <string name="et_repeatpassword">Repeat the password</string>
     <string name="btn_reg">Register now</string>
+    <string name="toolbar">Menu</string>
+    <string name="hint_title_pill">Title</string>
+    <string name="hint_pill">Enter here your pill</string>
+    <string name="welcome">"Welcome "</string>
 </resources>

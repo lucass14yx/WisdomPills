@@ -80,7 +80,8 @@ class MainActivity : AppCompatActivity() {
                 val user = users.firstOrNull { it.email == email && it.password == password }
                 if (user != null) {
                     val intent = Intent(this, EnterActivity::class.java)
-                    intent.putExtra("idUser", user.idUser) // Pasar datos del usuario
+                    intent.putExtra("idUser", user.idUser)
+                    intent.putExtra("name", user.nickname)
                     startActivity(intent)
                 } else {
                     Toast.makeText(this, "Usuario o contraseña incorrectos", Toast.LENGTH_SHORT).show()

@@ -1,5 +1,6 @@
 package com.maestre.wisdompills.View
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -19,12 +20,15 @@ class EnterActivity : AppCompatActivity() {
     private lateinit var myAdapter: NoteAdapter
     private val viewmodel: NoteViewModel by viewModels()
 
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityEnterBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         val userId = intent.getStringExtra("idUser")?:return
+        val name = intent.getStringExtra("name")?:return
+        binding.textView.setText(@strings/welcome + name)
         Toast.makeText(this, "idUsuario: $userId", Toast.LENGTH_SHORT).show()
         val toolbar: MaterialToolbar = binding.materialToolbar
         setSupportActionBar(toolbar)
@@ -34,7 +38,7 @@ class EnterActivity : AppCompatActivity() {
         initRecyclerView()
 
         viewmodel.notesLiveData.observe(this) { notes ->
-            val userId = intent.getStringExtra("idUser")
+            //val userId = intent.getStringExtra("idUser")
             val userNotes = notes.filter { it.idUser == userId }
             myAdapter.updateData(userNotes)
         }

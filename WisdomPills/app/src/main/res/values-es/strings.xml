@@ -13,4 +13,8 @@
     <string name="et_repeatpassword">Repite la contraseña</string>
     <string name="et_password">Contraseña</string>
     <string name="btn_reg">Registrar ahora</string>
+    <string name="toolbar">Menú</string>
+    <string name="hint_title_pill">Titulo</string>
+    <string name="hint_pill">Introduce tu píldora aquí</string>
+    <string name="welcome">"Bienvenidx "</string>
 </resources>

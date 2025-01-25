@@ -9,6 +9,7 @@ import com.maestre.wisdompills.Model.persistence.NoteRepository
 class NoteViewModel(application: Application) : AndroidViewModel(application) {
     private val repository: NoteRepository
     lateinit var notesLiveData: LiveData<List<Note>>
+    lateinit var userId: String
 
     init {
         repository = NoteRepository()
@@ -20,8 +21,10 @@ class NoteViewModel(application: Application) : AndroidViewModel(application) {
         repository.addNote(note)
     }
 
+
+
     private fun getNotes() {
-        notesLiveData= repository.getNotes(userId)
+        notesLiveData= repository.getNotes()
     }
 
 }

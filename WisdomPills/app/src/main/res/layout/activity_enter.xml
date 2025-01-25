@@ -23,7 +23,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:navigationIcon="@drawable/baseline_menu_24"
-        app:title="Menu" />
+        app:title="@string/toolbar" />
 
     <EditText
         android:id="@+id/titleEditText"
@@ -31,7 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:layout_marginBottom="8dp"
-        android:hint="Title"
+        android:hint="@string/hint_title_pill"
         app:layout_constraintBottom_toTopOf="@+id/contentEditText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -45,7 +45,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginBottom="32dp"
         android:height="50dp"
-        android:hint="Enter here your pill"
+        android:hint="@string/hint_pill"
         app:layout_constraintBottom_toTopOf="@+id/notesRecyclerView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -86,7 +86,6 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="6dp"
-        android:text="Welcome"
         app:layout_constraintBottom_toTopOf="@+id/titleEditText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
