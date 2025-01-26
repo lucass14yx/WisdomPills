@@ -33,7 +33,7 @@ class EnterActivity : AppCompatActivity() {
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(applicationContext)
 
         // Configurar el tema antes de inflar las vistas
-        setupThemeAndMode()
+        setupTemaYModo()
         super.onCreate(savedInstanceState)
         binding = ActivityEnterBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -68,7 +68,7 @@ class EnterActivity : AppCompatActivity() {
 
 
     }
-    private fun setupThemeAndMode() {
+    private fun setupTemaYModo() {
         val themeName = sharedPreferences.getString("pref_themes", "WisdomPillsTheme") ?: "WisdomPillsTheme"
         when (themeName) {
             "WisdomPillsTheme" -> setTheme(R.style.WisdomPillsTheme)
@@ -101,7 +101,7 @@ class EnterActivity : AppCompatActivity() {
             .setPositiveButton(R.string.OK) { dialogInterface, i ->
                 val inputText = editText.text.toString()
                 if (inputText.isEmpty()) {
-                    Toast.makeText(this, "Please enter a value", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, R.string.toast_enter_value, Toast.LENGTH_SHORT).show()
                 } else {
                     // Continuar con la lógica
                     Toast.makeText(this, "Input: $inputText", Toast.LENGTH_SHORT).show()
@@ -113,26 +113,26 @@ class EnterActivity : AppCompatActivity() {
     }
     private fun showAddAlertDialog(userId: String) {
         AlertDialog.Builder(ContextThemeWrapper(this,R.style.CustomAlertDialog))
-            .setTitle("Confirmation")
-            .setMessage("Are you sure you want to proceed?")
+            .setTitle(R.string.text_alert_dia_confirmation)
+            .setMessage(R.string.text_alert_dia_proceed)
             .setPositiveButton(R.string.OK) { dialog, which ->
                 // Handle OK button click
                 val title = binding.titleEditText.text.toString()
                 val content = binding.contentEditText.text.toString()
 
                 if (title.isEmpty() || content.isEmpty()) {
-                    Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, R.string.toast_fill_all_fields, Toast.LENGTH_SHORT).show()
                 } else {
                     // Si los campos son válidos, proceder
                     viewmodel.addNote(title, content, userId)
                     binding.titleEditText.text.clear()
                     binding.contentEditText.text.clear()
-                    Toast.makeText(this, "Note added successfully", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, R.string.toast_added_successfully, Toast.LENGTH_SHORT).show()
                 }
             }
             .setNegativeButton(R.string.Cancel) { dialog, which ->
                 // Handle Cancel button click
-                Toast.makeText(this, "Cancel clicked", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, R.string.toast_cancel_clicked, Toast.LENGTH_SHORT).show()
             }
             .show()
     }

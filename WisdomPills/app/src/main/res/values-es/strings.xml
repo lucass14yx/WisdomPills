@@ -14,8 +14,15 @@
     <string name="et_password">Contraseña</string>
     <string name="btn_reg">Registrar ahora</string>
     <string name="toolbar">Menú</string>
-    <string name="hint_title_pill">Titulo</string>
+    <string name="hint_title_pill">Introduce título</string>
     <string name="hint_pill">Introduce tu píldora aquí</string>
-    <string name="welcome">¡Bienvenidx %1$s!</string>
+    <string name="welcome">¡Bienvenidx, %1$s!</string>
     <string name="Cancel">Cancelar</string>
+    <string name="toast_enter_value">Por favor, introduce un valor</string>
+    <string name="toast_fill_all_fields">Por favor, rellena todos los campos</string>
+    <string name="text_alert_dia_confirmation">Confirmación</string>
+    <string name="text_alert_dia_proceed">¿Está segurx que desea continuar?</string>
+    <string name="toast_added_successfully">Píldora añadida</string>
+    <string name="toast_cancel_clicked">Ha hecho click en Cancelar</string>
+    <string name="btn_modify">Modificar</string>
 </resources>

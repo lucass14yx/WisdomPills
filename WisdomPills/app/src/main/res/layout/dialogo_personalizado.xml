@@ -17,6 +17,6 @@
         android:id="@+id/editTextData"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter data" />
+        android:hint="@string/hint_title_pill" />
 
 </LinearLayout>
