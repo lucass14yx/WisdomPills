@@ -17,4 +17,5 @@
     <string name="hint_title_pill">Titulo</string>
     <string name="hint_pill">Introduce tu píldora aquí</string>
     <string name="welcome">¡Bienvenidx %1$s!</string>
+    <string name="Cancel">Cancelar</string>
 </resources>

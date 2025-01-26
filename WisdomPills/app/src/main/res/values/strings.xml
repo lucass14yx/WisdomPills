@@ -17,4 +17,6 @@
     <string name="hint_title_pill">Title</string>
     <string name="hint_pill">Enter here your pill</string>
     <string name="welcome">Welcome %1$s!</string>
+    <string name="OK" translatable="false">OK</string>
+    <string name="Cancel">Cancel</string>
 </resources>

@@ -18,4 +18,8 @@
         <item name="android:textColor">@color/textPrimaryLight</item>
         <item name="android:background">@drawable/rounded_button</item>
     </style>
+    <style name="CustomAlertDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:textColor">@color/textPrimaryLight</item>
+        <item name="android:background">@color/colorAccentLight</item>
+    </style>
 </resources>
