@@ -33,7 +33,6 @@ class EnterActivity : AppCompatActivity() {
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(applicationContext)
 
         // Configurar el tema antes de inflar las vistas
-        setupTemaYModo()
         super.onCreate(savedInstanceState)
         binding = ActivityEnterBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -68,19 +67,7 @@ class EnterActivity : AppCompatActivity() {
 
 
     }
-    private fun setupTemaYModo() {
-        val themeName = sharedPreferences.getString("pref_themes", "WisdomPillsTheme") ?: "WisdomPillsTheme"
-        when (themeName) {
-            "WisdomPillsTheme" -> setTheme(R.style.WisdomPillsTheme)
-            "Base.Theme.WisdomPills" -> setTheme(R.style.Base_Theme_WisdomPills)
-            else -> setTheme(R.style.WisdomPillsTheme) // Tema predeterminado en caso de error
-        }
 
-        val isDarkModeEnabled = sharedPreferences.getBoolean("def_nigthmode", false)
-        AppCompatDelegate.setDefaultNightMode(
-            if (isDarkModeEnabled) AppCompatDelegate.MODE_NIGHT_YES else AppCompatDelegate.MODE_NIGHT_NO
-        )
-    }
     //Metodo para inicializar y configurar el RecyclerView que muestra las notas de este usuario
     private fun initRecyclerView() {
         val manager = LinearLayoutManager(this)
