@@ -26,4 +26,6 @@
     <string name="toast_added_successfully">Note added successfully</string>
     <string name="toast_cancel_clicked">Cancel clicked</string>
     <string name="btn_modify">Modify</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

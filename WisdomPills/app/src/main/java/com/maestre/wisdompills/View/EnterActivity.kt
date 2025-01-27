@@ -133,15 +133,19 @@ class EnterActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
-            R.id.menu_search -> {
-                true
-            }
-
             R.id.menu_info -> {
+                // Reemplaza el contenido actual con el SettingsFragment
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.container, SettingsFragment()) // Reemplaza 'container' con el ID de tu contenedor
+                    .addToBackStack(null)
+                    .commit()
                 true
             }
-
-            else -> false
+            R.id.menu_search -> {
+                Toast.makeText(this, "Search", Toast.LENGTH_SHORT).show()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
         }
     }
 }
